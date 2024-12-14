@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,500;1,9..40,600;1,9..40,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$primary: #4F5955;
+$primary-iight: #6e7773;
+$support: #F2EDDC;
+$secondary: #D9C3A9;
+$custom-gray: #9C9EA6;
+$body: #535656;
+
+@import "bootstrap/scss/bootstrap.scss";
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: $body;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#MainContainer {
+    min-width: 960px;
+}
+
+.header-bar {
+    height: 50px;
+    color: #FFF;
+    ul {
+        li {
+            float: left;
+            border-left: 1px solid $primary-iight;
+            &:last-of-type {
+                border-right: 1px solid $primary-iight;
+            }
+            a {
+                display: block;
+                color: #FFF;
+                padding: 13px;
+            }
+        }
+    }
+}
+
+.main-nav {
+    ul li {
+        float: left;
+        a {
+            text-decoration: none;
+            font-weight: bold;
+        }
+    }
+}

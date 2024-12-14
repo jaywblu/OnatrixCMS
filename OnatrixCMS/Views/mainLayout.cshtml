@@ -1,0 +1,40 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = null;
+
+	var keywordsList = Model.Value<IEnumerable<String>>("pageKeywords");
+	var keywords = keywordsList != null ? string.Join(", ", keywordsList) : "";
+
+	ViewBag.Title = Model.Value("pageTitle");
+}
+
+<html>
+	<head>
+		<title>@ViewBag.Title | Onatrix</title>
+		<meta name="description" content="@Model.Value("pageDescription")">
+		<meta name="keywords" content="@keywords">
+        <link href="/css/main.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+        <div id="MainContainer" class="container-fluid">
+            @await Html.PartialAsync("HeaderSection")
+            <main>
+                <div class="row">
+                    <div class="col-auto col-md-1 col-lg-2">
+                        &nbsp;
+                    </div>
+                    <div class="col">
+                        @RenderBody()
+                    </div>
+                    <div class="col-auto col-md-1 col-lg-2">
+                        &nbsp;
+                    </div>
+                </div>
+            </main>
+        </div>
+        <script src="./bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="./js/index.js"></script>
+	</body>
+</html>
